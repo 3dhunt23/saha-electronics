@@ -8,181 +8,156 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
         
-        /* Base & Fallback Styles to guarantee layout never breaks */
-        body { 
-            font-family: 'Hind Siliguri', sans-serif; 
-            scroll-behavior: smooth; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f9fafb; 
-            color: #1f2937;
-        }
-        
+        /* Base & Fallback Styles */
+        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; margin: 0; background-color: #f9fafb; color: #1f2937;}
         img { max-width: 100%; height: auto; }
         .object-cover-custom { object-fit: cover; object-position: center; }
         
-        /* Custom Grid Fallback ensures exact column structures on all screens */
-        .responsive-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        @media (min-width: 768px) {
-            .responsive-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        }
-        @media (min-width: 1024px) {
-            .responsive-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        }
-
-        /* Responsive Visibility Controls */
-        @media (max-width: 639px) {
-            .desktop-only { display: none !important; }
-        }
-        @media (min-width: 640px) {
-            .mobile-only { display: none !important; }
-        }
+        /* Fallback for Grid on extremely old browsers, though Tailwind md:grid handles most */
+        .fallback-grid { display: block; }
+        @media (min-width: 640px) { .fallback-grid { display: grid; } }
 
         /* Hover animations */
         .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px -10px rgba(29, 78, 216, 0.15); }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(29, 78, 216, 0.1); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <div class="bg-blue-950 text-white text-xs py-2.5 px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-center shadow-sm" style="background-color: #172554;">
-        <div class="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2">
-            <span>📍 জামাল সুপার মার্কেট, জিরো পয়েন্ট, রাজশাহী</span>
-            <span class="desktop-only text-blue-400">|</span>
+    <div class="bg-blue-950 text-white py-2 px-3 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-1.5 text-center shadow-sm">
+        <div class="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs">
+            <span>📍 জামাল সুপার মার্কেট, রাজশাহী</span>
+            <span class="hidden sm:inline text-blue-400">|</span>
             <span class="font-semibold text-yellow-300">📞 01718242092</span>
         </div>
-        <div class="font-medium text-blue-200 text-[11px] sm:text-xs">
-            দোকান: সকাল ৯টা - রাত ৯টা (শুক্রবার বন্ধ) | অনলাইন: ২৪ ঘণ্টা
+        <div class="font-medium text-blue-200 text-[9px] sm:text-xs">
+            সকাল ৯টা - রাত ৯টা (শুক্র বন্ধ) | অনলাইন: ২৪ ঘণ্টা
         </div>
     </div>
 
-    <header class="bg-white shadow-md sticky top-0 z-50" style="background-color: #ffffff;">
-        <div class="container mx-auto px-4 sm:px-6 py-3">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-3 sm:px-6 py-2 sm:py-3">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-2.5 sm:gap-4">
                 
-                <div class="flex items-center justify-between w-full lg:w-auto">
-                    <div class="flex items-center gap-2.5 sm:gap-3">
-                        <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=150" 
+                <div class="flex items-center justify-between w-full lg:w-auto gap-2">
+                    <div class="flex items-center gap-2 sm:gap-3">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-rHhy82jXm32uF_zM413C4G65z_Uv4-qZ9g-PZ-Lg65z_Uv-qZ9g=s96-c" 
                              alt="Saha Electronics Logo" 
-                             width="50" height="50"
-                             class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-blue-600 object-cover shadow-sm object-cover-custom"
-                             style="width: 50px; height: 50px; border-radius: 50%;">
+                             width="40" height="40"
+                             class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 border-blue-600 object-cover shadow-sm object-cover-custom"
+                             style="width: 40px; height: 40px;">
                         <div class="text-left">
-                            <h1 class="text-lg sm:text-2xl font-bold text-blue-800 tracking-tight leading-none" style="margin: 0; color: #1e40af;">সাহা ইলেকট্রনিক্স</h1>
-                            <p class="text-[11px] sm:text-sm font-semibold text-gray-500 mt-0.5" style="margin: 0; color: #6b7280;">Owner: দুলাল সাহা</p>
+                            <h1 class="text-base sm:text-2xl font-bold text-blue-800 tracking-tight leading-none">সাহা ইলেকট্রনিক্স</h1>
+                            <p class="text-[9px] sm:text-sm font-semibold text-gray-500 mt-0.5">Owner: দুলাল সাহা</p>
                         </div>
                     </div>
                     
-                    <nav class="mobile-only flex gap-3 font-bold text-gray-600 text-xs">
-                        <a href="#home" class="hover:text-blue-600" style="color: #4b5563; text-decoration: none;">হোম</a>
-                        <a href="#products" class="hover:text-blue-600" style="color: #4b5563; text-decoration: none;">পণ্য</a>
-                        <a href="#about" class="hover:text-blue-600" style="color: #4b5563; text-decoration: none;">সম্পর্কে</a>
+                    <nav class="sm:hidden flex gap-2.5 font-bold text-gray-600 text-[10px]">
+                        <a href="#home" class="hover:text-blue-600">হোম</a>
+                        <a href="#products" class="hover:text-blue-600">পণ্য</a>
+                        <a href="#about" class="hover:text-blue-600">সম্পর্কে</a>
                     </nav>
                 </div>
 
-                <div class="relative flex-grow max-w-xl w-full" style="position: relative;">
-                    <input type="text" id="searchInput" oninput="searchProducts()" placeholder="টিভি, ফ্রিজ বা মডেলের নাম লিখুন..." class="w-full border-2 border-blue-100 rounded-full py-2 px-4 sm:px-6 pr-10 sm:pr-12 text-xs sm:text-base focus:outline-none focus:border-blue-600 shadow-inner font-medium text-gray-700 transition-colors" style="width: 100%; padding: 8px 35px 8px 16px; border-radius: 50px; border: 2px solid #dbeafe; box-sizing: border-box;">
-                    <button class="absolute right-3 sm:right-4 top-2 sm:top-2.5 text-blue-600 font-bold text-sm sm:text-lg pointer-events-none" style="position: absolute; right: 15px; top: 8px; background: none; border: none;">🔍</button>
+                <div class="relative flex-grow max-w-xl w-full">
+                    <input type="text" id="searchInput" oninput="searchProducts()" placeholder="টিভি, ফ্রিজ বা মডেল লিখুন..." class="w-full border-2 border-blue-100 rounded-full py-1.5 px-4 sm:px-6 pr-9 sm:pr-12 text-[11px] sm:text-base focus:outline-none focus:border-blue-600 shadow-inner font-medium text-gray-700 transition-colors">
+                    <button class="absolute right-2.5 sm:right-4 top-1.5 sm:top-2.5 text-blue-600 font-bold text-xs sm:text-lg pointer-events-none">🔍</button>
                 </div>
 
-                <nav class="desktop-only flex gap-6 font-bold text-gray-600 text-sm sm:text-base">
-                    <a href="#home" class="hover:text-blue-600 transition-colors" style="color: #4b5563; text-decoration: none;">হোম</a>
-                    <a href="#products" class="hover:text-blue-600 transition-colors" style="color: #4b5563; text-decoration: none;">পণ্যসমূহ</a>
-                    <a href="#about" class="hover:text-blue-600 transition-colors" style="color: #4b5563; text-decoration: none;">আমাদের সম্পর্কে</a>
+                <nav class="hidden sm:flex gap-4 md:gap-6 font-bold text-gray-600 text-sm sm:text-base">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">হোম</a>
+                    <a href="#products" class="hover:text-blue-600 transition-colors">পণ্যসমূহ</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">আমাদের সম্পর্কে</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <section id="home" class="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white py-8 sm:py-16 px-4 sm:px-6" style="background: linear-gradient(to right, #1d4ed8, #312e81); color: #ffffff; padding: 40px 16px;">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 max-w-6xl">
-            <div class="lg:w-2/3 text-center lg:text-left">
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-6 leading-tight" style="margin-top: 0;">সেরা মানের ইলেকট্রনিক্স পণ্য এখন অনলাইনে!</h2>
-                <p class="text-xs sm:text-lg text-blue-100 mb-6 max-w-2xl leading-relaxed mx-auto lg:mx-0" style="color: #dbeafe;">
-                    রাজশাহীর জিরো পয়েন্টের বিশ্বস্ত প্রতিষ্ঠান সাহা ইলেকট্রনিক্স দিচ্ছে টিভি, ফ্রিজ ও ফ্যানের বিশাল সমাহার। আসল পণ্য ও সঠিক ওয়ারেন্টির নিশ্চয়তা। ঘরে বসেই নিশ্চিন্তে অর্ডার করুন, পান দ্রুত ডেলিভারি।
+    <section id="home" class="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white py-6 sm:py-16 px-3 sm:px-6">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-10 max-w-6xl">
+            <div class="lg:w-2/3 text-center lg:text-left mt-5 lg:mt-0">
+                <h2 class="text-xl sm:text-4xl md:text-5xl font-extrabold mb-2.5 sm:mb-6 leading-tight">সেরা মানের ইলেকট্রনিক্স পণ্য এখন অনলাইনে!</h2>
+                <p class="text-[10px] sm:text-lg text-blue-100 mb-5 sm:mb-8 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                    রাজশাহীর জিরো পয়েন্টের সাহা ইলেকট্রনিক্স দিচ্ছে টিভি, ফ্রিজ ও ফ্যানের বিশাল সমাহার। আসল পণ্য ও ওয়ারেন্টির নিশ্চয়তা। ঘরে বসেই নিশ্চিন্তে অর্ডার করুন।
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
-                    <span class="bg-yellow-400 text-blue-950 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl font-bold shadow-md inline-block text-xs sm:text-sm uppercase tracking-wider" style="background-color: #facc15; color: #172554; padding: 10px 20px; border-radius: 10px; font-weight: bold; margin-bottom: 8px;">
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
+                    <span class="bg-yellow-400 text-blue-950 px-3 py-2 sm:px-5 sm:py-3 rounded-lg sm:rounded-xl font-bold shadow-md inline-flex items-center justify-center gap-1.5 text-[9px] sm:text-sm uppercase tracking-wider">
                         🚚 ক্যাশ অন ডেলিভারি
                     </span>
-                    <span class="bg-white text-blue-950 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl font-bold shadow-md inline-block text-xs sm:text-sm uppercase tracking-wider" style="background-color: #ffffff; color: #172554; padding: 10px 20px; border-radius: 10px; font-weight: bold;">
-                        💳 বিকাশ ইনস্ট্যান্ট পেমেন্ট
+                    <span class="bg-white text-blue-950 px-3 py-2 sm:px-5 sm:py-3 rounded-lg sm:rounded-xl font-bold shadow-md inline-flex items-center justify-center gap-1.5 text-[9px] sm:text-sm uppercase tracking-wider">
+                        💳 বিকাশ পেমেন্ট
                     </span>
                 </div>
             </div>
             
-            <div class="lg:w-1/3 flex justify-center mt-6 lg:mt-0">
-                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-2xl text-center border-4 border-blue-400/30 max-w-xs w-full" style="background-color: #ffffff; padding: 20px; border-radius: 20px; color: #1f2937;">
-                    <div class="relative mx-auto mb-3 sm:mb-4" style="width: 120px; height: 120px;">
-                        <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=300" 
+            <div class="lg:w-1/3 flex justify-center transform lg:translate-y-6">
+                <div class="bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl text-center border-4 border-blue-400/30 max-w-[240px] sm:max-w-xs w-full">
+                    <div class="relative mx-auto mb-2.5 sm:mb-4" style="width: 100px; height: 100px;">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-rHhy82jXm32uF_zM413C4G65z_Uv4-qZ9g-PZ-Lg65z_Uv-qZ9g=s96-c" 
                              alt="Owner Dulal Saha" 
-                             width="120" height="120"
+                             width="100" height="100"
                              class="rounded-full border-4 border-blue-600 object-cover shadow-md object-cover-custom"
-                             style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+                             style="width: 100px; height: 100px;">
                     </div>
-                    <h3 class="text-blue-950 font-bold text-xl sm:text-2xl tracking-tight" style="margin: 0; color: #172554;">দুলাল সাহা</h3>
-                    <p class="text-gray-500 font-semibold text-xs sm:text-sm mt-0.5" style="margin: 0; color: #6b7280;">Owner of Shaha Electronics</p>
+                    <h3 class="text-blue-950 font-bold text-lg sm:text-2xl tracking-tight">দুলাল সাহা</h3>
+                    <p class="text-gray-500 font-semibold text-[10px] sm:text-sm mt-0.5">Owner of Shaha Electronics</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="container mx-auto px-4 sm:px-6 py-10 sm:py-16 max-w-7xl" style="padding-top: 40px; padding-bottom: 40px; max-width: 1280px; margin: auto;">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 border-b-2 border-blue-100 pb-4 gap-2" style="border-bottom: 2px solid #dbeafe; margin-bottom: 24px; padding-bottom: 16px;">
+    <section id="products" class="container mx-auto px-3 sm:px-6 py-8 sm:py-16 max-w-7xl">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 sm:mb-10 border-b-2 border-blue-100 pb-3 sm:pb-5 gap-2">
             <div>
-                <h2 class="text-xl sm:text-3xl font-bold text-gray-800 tracking-tight" style="margin: 0;">আমাদের ইলেকট্রনিক্স পণ্যসমূহ</h2>
-                <p class="text-gray-500 text-xs sm:text-base mt-0.5 sm:mt-1" style="margin: 4px 0 0 0; color: #6b7280;">আকর্ষণীয় মূল্যে সেরা মানের ১০০% অরিজিনাল পণ্য</p>
+                <h2 class="text-lg sm:text-3xl font-bold text-gray-800 tracking-tight">আমাদের পণ্যসমূহ</h2>
+                <p class="text-gray-500 text-[10px] sm:text-base mt-0.5">সেরা মূল্যে ১০০% অরিজিনাল ইলেকট্রনিক্স</p>
             </div>
-            <span class="bg-blue-600 text-white font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-sm shadow-sm inline-block mt-2 sm:mt-0" style="background-color: #2563eb; color: #ffffff; padding: 4px 12px; border-radius: 50px;">মোট ২০টি পণ্য</span>
+            <span class="bg-blue-600 text-white font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-sm shadow-sm self-end sm:self-auto">মোট ২০টি পণ্য</span>
         </div>
 
-        <div id="productGrid" class="responsive-grid">
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
         </div>
 
-        <div id="notFound" class="hidden text-center py-12 sm:py-16 bg-blue-50 rounded-2xl border border-blue-100 mt-8 shadow-sm px-4" style="background-color: #eff6ff; padding: 40px 16px; border-radius: 16px; text-align: center; margin-top: 24px;">
-            <p class="text-3xl sm:text-5xl mb-2 sm:mb-3" style="font-size: 3rem; margin: 0;">🔍</p>
-            <h3 class="text-base sm:text-xl text-blue-900 font-bold mb-2" style="color: #1e3a8a;">দুঃখিত! আপনার খোঁজা নির্দিষ্ট মডেলটি এই মুহূর্তে তালিকায় পাওয়া যাচ্ছে না।</h3>
-            <p class="text-gray-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed" style="color: #4b5563;">তবে আমাদের স্টকে আরও অনেক আকর্ষণীয় পণ্য রয়েছে। নিচে আমাদের উপলব্ধ টিভি, ফ্রিজ ও ফ্যানগুলোর সম্পূর্ণ তালিকা দেওয়া হলো:</p>
+        <div id="notFound" class="hidden text-center py-10 sm:py-16 bg-blue-50 rounded-xl sm:rounded-2xl border border-blue-100 mt-6 sm:mt-10 shadow-sm px-4">
+            <p class="text-2xl sm:text-5xl mb-2 sm:mb-3">🔍</p>
+            <h3 class="text-sm sm:text-xl text-blue-900 font-bold mb-1.5 sm:mb-2">দুঃখিত! এই মডেলটি পাওয়া যাচ্ছে না।</h3>
+            <p class="text-gray-600 text-[10px] sm:text-sm max-w-md mx-auto leading-relaxed">স্টকে থাকা উপলব্ধ টিভি, ফ্রিজ ও ফ্যানগুলোর সম্পূর্ণ তালিকা নিচে দেওয়া হলো:</p>
         </div>
     </section>
 
-    <section id="about" class="bg-white py-12 sm:py-20 border-t border-gray-100" style="background-color: #ffffff; border-top: 1px solid #f3f4f6; padding: 40px 16px;">
+    <section id="about" class="bg-white py-10 sm:py-20 border-t border-gray-100 px-3 sm:px-6">
         <div class="container mx-auto max-w-5xl">
-            <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 p-5 sm:p-10 rounded-3xl border border-blue-100 shadow-sm" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 24px; padding: 24px;">
-                <div class="md:w-1/3 flex justify-center" style="text-align: center;">
+            <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-blue-100 shadow-sm bg-gradient-to-br from-blue-50/60 to-indigo-50/30">
+                <div class="md:w-1/3 flex justify-center text-center">
                     <div>
-                        <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-rHhy82jXm32uF_zM413C4G65z_Uv4-qZ9g-PZ-Lg65z_Uv-qZ9g=s96-c" 
                              alt="Owner Dulal Saha" 
-                             width="160" height="160"
-                             class="object-cover rounded-2xl shadow-md border-4 border-white mx-auto object-cover-custom"
-                             style="width: 160px; height: 160px; border-radius: 16px; object-fit: cover;">
-                        <h4 class="font-bold text-blue-950 text-lg sm:text-xl mt-3" style="margin: 12px 0 0 0; color: #172554;">দুলাল সাহা</h4>
-                        <p class="text-xs font-semibold text-gray-500 mt-0.5" style="margin: 0; color: #6b7280;">Owner of Shaha Electronics</p>
+                             width="130" height="130"
+                             class="object-cover rounded-xl sm:rounded-2xl shadow-md border-4 border-white mx-auto object-cover-custom"
+                             style="width: 130px; height: 130px;">
+                        <h4 class="font-bold text-blue-950 text-base sm:text-xl mt-2.5 sm:mt-3">দুলাল সাহা</h4>
+                        <p class="text-[9px] sm:text-xs font-semibold text-gray-500 mt-0.5">Owner of Shaha Electronics</p>
                     </div>
                 </div>
-                <div class="md:w-2/3 text-center md:text-left" style="flex-grow: 1;">
-                    <span class="text-blue-600 font-bold text-[11px] sm:text-xs tracking-widest uppercase" style="color: #2563eb;">আমাদের সম্পর্কে</span>
-                    <h2 class="text-lg sm:text-2xl font-bold text-gray-800 mt-1 mb-2 sm:mb-3" style="margin: 4px 0 12px 0;">সাহা ইলেকট্রনিক্স - বিশ্বস্ততার প্রতীক</h2>
-                    <p class="text-gray-600 leading-relaxed text-xs sm:text-base mb-5 text-justify sm:text-left" style="color: #4b5563; line-height: 1.6;">
-                        রাজশাহীর জিরো পয়েন্টে অবস্থিত জামাল সুপার মার্কেটে <strong>সাহা ইলেকট্রনিক্স</strong> দীর্ঘ সময় ধরে অত্যন্ত সুনামের সাথে ব্যবসা পরিচালনা করে আসছে। আমরা স্বনামধন্য <strong>যমুনা ইলেকট্রনিক্স</strong>-এর অনুমোদিত ডিলার। আমাদের শোরুমে পাবেন লেটেস্ট প্রযুক্তির স্মার্ট এলইডি টিভি, বিদ্যুৎ সাশ্রয়ী ফ্রিজ, ডিপ ফ্রিজার, আকর্ষণীয় ডিজাইনের সিলিং ফ্যান এবং রিচার্জেবল চার্জার ফ্যান। আপনাদের কেনাকাটা আরও সহজ ও স্বাচ্ছন্দ্যময় করতেই আমাদের এই অনলাইন উদ্যোগ।
+                <div class="md:w-2/3 text-center md:text-left">
+                    <span class="text-blue-600 font-bold text-[9px] sm:text-xs tracking-widest uppercase">আমাদের সম্পর্কে</span>
+                    <h2 class="text-base sm:text-2xl font-bold text-gray-800 mt-1 mb-2.5">সাহা ইলেকট্রনিক্স - বিশ্বস্ততার প্রতীক</h2>
+                    <p class="text-gray-600 leading-relaxed text-[10px] sm:text-base mb-5 text-justify sm:text-left">
+                        রাজশাহীর জিরো পয়েন্টে <strong>সাহা ইলেকট্রনিক্স</strong> দীর্ঘ সময় ধরে সুনামের সাথে ব্যবসা পরিচালনা করছে। আমরা <strong>যমুনা ইলেকট্রনিক্স</strong>-এর অনুমোদিত ডিলার। আমাদের শোরুমে পাবেন লেটেস্ট প্রযুক্তির স্মার্ট টিভি, ফ্রিজ, ডিপ ফ্রিজার, এবং সিলিং ফ্যান। আপনাদের কেনাকাটা সহজ করতেই আমাদের এই অনলাইন উদ্যোগ।
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                        <div class="bg-white p-3 rounded-xl shadow-xs border border-gray-100 flex items-center gap-3 justify-center sm:justify-start" style="background: #ffffff; padding: 12px; border-radius: 12px; border: 1px solid #f3f4f6; display: flex; align-items: center;">
-                            <span class="text-blue-600 text-lg sm:text-xl" style="margin-right: 8px;">📞</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="bg-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl shadow-xs border border-gray-100 flex items-center gap-2.5 sm:gap-3 justify-center sm:justify-start">
+                            <span class="text-blue-600 text-base sm:text-xl">📞</span>
                             <div class="text-left">
-                                <p class="text-[10px] sm:text-[11px] text-gray-400 font-semibold tracking-wider" style="margin: 0; color: #9ca3af;">হটলাইন নম্বর</p>
-                                <p class="font-bold text-gray-800 text-xs sm:text-sm" style="margin: 0; font-weight: bold;">01718242092</p>
+                                <p class="text-[9px] text-gray-400 font-semibold tracking-wider">হটলাইন নম্বর</p>
+                                <p class="font-bold text-gray-800 text-[10px] sm:text-sm">01718242092</p>
                             </div>
                         </div>
-                        <div class="bg-white p-3 rounded-xl shadow-xs border border-gray-100 flex items-center gap-3 justify-center sm:justify-start" style="background: #ffffff; padding: 12px; border-radius: 12px; border: 1px solid #f3f4f6; display: flex; align-items: center;">
-                            <span class="text-blue-600 text-lg sm:text-xl" style="margin-right: 8px;">✉️</span>
+                        <div class="bg-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl shadow-xs border border-gray-100 flex items-center gap-2.5 sm:gap-3 justify-center sm:justify-start">
+                            <span class="text-blue-600 text-base sm:text-xl">✉️</span>
                             <div class="text-left overflow-hidden">
-                                <p class="text-[10px] sm:text-[11px] text-gray-400 font-semibold tracking-wider" style="margin: 0; color: #9ca3af;">ইমেইল অ্যাড্রেস</p>
-                                <p class="font-bold text-gray-800 text-[11px] sm:text-xs break-all" style="margin: 0; font-weight: bold; word-break: break-all;">sahaelectronics@gmail.com</p>
+                                <p class="text-[9px] text-gray-400 font-semibold tracking-wider">ইমেইল অ্যাড্রেস</p>
+                                <p class="font-bold text-gray-800 text-[9px] sm:text-xs break-all">sahaelectronics@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -191,67 +166,67 @@
         </div>
     </section>
 
-    <footer class="bg-gray-950 text-white py-10 border-t-4 border-blue-600" style="background-color: #030712; color: #ffffff; padding: 40px 16px; border-top: 4px solid #2563eb;">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-sm leading-relaxed max-w-6xl text-center sm:text-left" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+    <footer class="bg-gray-950 text-white py-8 sm:py-12 border-t-4 border-blue-600 px-3 sm:px-6">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 text-[11px] sm:text-sm leading-relaxed max-w-6xl text-center sm:text-left">
             <div>
-                <h4 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide" style="color: #facc15; margin-bottom: 8px;">সাহা ইলেকট্রনিক্স</h4>
-                <p class="text-gray-400 text-xs sm:text-sm" style="color: #9ca3af;">রাজশাহীর জিরো পয়েন্টের বিশ্বস্ত ইলেকট্রনিক্স শপ। সঠিক মূল্যে আসল পণ্য ও সার্ভিস দেওয়াই আমাদের মূল লক্ষ্য।</p>
+                <h4 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide">সাহা ইলেকট্রনিক্স</h4>
+                <p class="text-gray-400">রাজশাহীর জিরো পয়েন্টের বিশ্বস্ত ইলেকট্রনিক্স শপ। সঠিক মূল্যে আসল পণ্য দেওয়াই আমাদের লক্ষ্য。</p>
             </div>
             <div>
-                <h4 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide" style="color: #facc15; margin-bottom: 8px;">দোকানের সময়সূচী</h4>
-                <p class="text-gray-300 text-xs sm:text-sm mb-1" style="color: #d1d5db; margin: 0;">শোরুম: সকাল ৯:০০ টা থেকে রাত ৯:০০ টা</p>
-                <p class="text-red-400 font-semibold text-xs sm:text-sm mb-1" style="color: #f87171; margin: 4px 0;">শুক্রবার শোরুম সম্পূর্ণ বন্ধ</p>
-                <p class="text-green-400 font-semibold text-xs sm:text-sm" style="color: #4ade80; margin: 0;">অনলাইন শপ: ২৪ ঘণ্টা খোলা</p>
+                <h4 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide">সময়সূচী</h4>
+                <p class="text-gray-300">শোরুম: সকাল ৯:০০ টা - রাত ৯:০০ টা</p>
+                <p class="text-red-400 font-semibold mt-0.5">শুক্রবার শোরুম বন্ধ</p>
+                <p class="text-green-400 font-semibold mt-0.5">অনলাইন শপ: ২৪ ঘণ্টা খোলা</p>
             </div>
-            <div>
-                <h4 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide" style="color: #facc15; margin-bottom: 8px;">যোগাযোগ ও ঠিকানা</h4>
-                <p class="text-gray-300 text-xs sm:text-sm mb-1 sm:mb-2" style="color: #d1d5db; margin: 0 0 8px 0;">জামাল সুপার মার্কেট, জিরো পয়েন্ট, রাজশাহী</p>
-                <p class="text-gray-300 text-xs sm:text-sm" style="color: #d1d5db; margin: 0;">অর্ডার ও পেমেন্ট: <span class="text-yellow-300 font-bold" style="color: #fde047;">01718242092</span></p>
+            <div class="sm:col-span-2 md:col-span-1">
+                <h4 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-yellow-400 tracking-wide">ঠিকানা</h4>
+                <p class="text-gray-300">জামাল সুপার মার্কেট, জিরো পয়েন্ট, রাজশাহী</p>
+                <p class="text-gray-300 mt-1">অর্ডার ও পেমেন্ট: <span class="text-yellow-300 font-bold">01718242092</span></p>
             </div>
         </div>
-        <div class="border-t border-gray-800 mt-8 pt-5 text-center text-[11px] sm:text-xs text-gray-500 font-medium tracking-wider" style="border-top: 1px solid #1f2937; margin-top: 32px; padding-top: 16px; text-align: center; color: #6b7280;">
-            <p style="margin: 0;">Owner: দুলাল সাহা | Shaha Electronics</p>
+        <div class="border-t border-gray-800 mt-6 sm:mt-8 pt-4 sm:pt-5 text-center text-[9px] sm:text-xs text-gray-500 font-medium tracking-wider">
+            <p>Owner: দুলাল সাহা | Shaha Electronics</p>
         </div>
     </footer>
 
-    <div id="orderModal" class="fixed inset-0 bg-black/60 z-50 hidden flex justify-center items-center px-4 transition-opacity duration-200" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; padding: 16px;">
-        <div class="bg-white rounded-2xl max-w-md w-full p-5 sm:p-7 shadow-2xl relative border-t-4 border-blue-600 overflow-hidden max-h-[90vh] overflow-y-auto" style="background: #fff; width: 100%; max-width: 450px; padding: 20px; border-radius: 16px; border-top: 4px solid #2563eb; max-height: 90vh; overflow-y: auto; box-sizing: border-box; position: relative;">
-            <button onclick="closeModal()" class="absolute top-2 sm:top-3.5 right-3 sm:right-4 text-2xl sm:text-3xl font-bold text-gray-400 hover:text-gray-600 leading-none" style="position: absolute; right: 15px; top: 10px; font-size: 1.5rem; background: none; border: none; cursor: pointer;">×</button>
-            <h2 class="text-base sm:text-xl font-bold text-blue-900 mb-1" style="margin: 0; color: #1e3a8a;">অর্ডার ফর্ম</h2>
-            <p id="modalItem" class="font-bold text-blue-600 text-xs sm:text-sm mb-4 pb-2 border-b border-gray-100" style="color: #2563eb; margin-bottom: 16px; border-bottom: 1px solid #f3f4f6; padding-bottom: 8px;"></p>
+    <div id="orderModal" class="fixed inset-0 bg-black/60 z-50 hidden flex justify-center items-center px-4 transition-opacity duration-200">
+        <div class="bg-white rounded-xl sm:rounded-2xl max-w-md w-full p-5 sm:p-7 shadow-2xl relative border-t-4 border-blue-600 overflow-hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-2 sm:top-3 right-2.5 sm:right-4 text-xl sm:text-2xl font-bold text-gray-400 hover:text-gray-600 leading-none">×</button>
+            <h2 class="text-sm sm:text-xl font-bold text-blue-900 mb-1">অর্ডার ফর্ম</h2>
+            <p id="modalItem" class="font-bold text-blue-600 text-[10px] sm:text-sm mb-4 pb-2 border-b border-gray-100"></p>
             
             <form id="orderForm" class="space-y-3">
-                <div style="margin-bottom: 12px;">
-                    <label class="block text-[11px] sm:text-xs font-bold text-gray-600 mb-1" style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px;">আপনার সম্পূর্ণ নাম *</label>
-                    <input type="text" placeholder="নাম লিখুন" required class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box;">
+                <div>
+                    <label class="block text-[10px] sm:text-xs font-bold text-gray-600 mb-1">আপনার সম্পূর্ণ নাম *</label>
+                    <input type="text" placeholder="নাম লিখুন" required class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600">
                 </div>
-                <div style="margin-bottom: 12px;">
-                    <label class="block text-[11px] sm:text-xs font-bold text-gray-600 mb-1" style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px;">মোবাইল নম্বর *</label>
-                    <input type="tel" placeholder="01718242092" required class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box;">
+                <div>
+                    <label class="block text-[10px] sm:text-xs font-bold text-gray-600 mb-1">মোবাইল নম্বর *</label>
+                    <input type="tel" placeholder="01718242092" required class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600">
                 </div>
-                <div style="margin-bottom: 12px;">
-                    <label class="block text-[11px] sm:text-xs font-bold text-gray-600 mb-1" style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px;">ডেলিভারি ঠিকানা (শুধুমাত্র রাজশাহী জেলা) *</label>
-                    <textarea placeholder="বাড়ি নং, রাস্তা, এলাকা, থানা, রাজশাহী" required rows="2" class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600 resize-none" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; resize: none;"></textarea>
+                <div>
+                    <label class="block text-[10px] sm:text-xs font-bold text-gray-600 mb-1">ডেলিভারি ঠিকানা (রাজশাহী জেলা) *</label>
+                    <textarea placeholder="বাড়ি নং, এলাকা, থানা, রাজশাহী" required rows="2" class="w-full border border-gray-300 p-2 sm:p-2.5 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-600 resize-none"></textarea>
                 </div>
                 
-                <div class="bg-blue-50/80 p-3 rounded-xl border border-blue-100" style="background: #eff6ff; padding: 12px; border-radius: 12px; border: 1px solid #dbeafe; margin-bottom: 12px;">
-                    <p class="text-[11px] sm:text-xs font-bold text-blue-950 mb-1.5" style="margin: 0 0 8px 0; font-weight: bold; font-size: 12px;">পেমেন্ট মেথড নির্বাচন করুন:</p>
-                    <label class="flex items-start text-[11px] sm:text-xs font-semibold text-gray-700 mb-2 cursor-pointer leading-tight" style="display: flex; align-items: center; font-size: 11px; margin-bottom: 8px;">
-                        <input type="radio" name="payOption" value="cod" checked class="mr-2 mt-0.5 accent-blue-600" onchange="toggleBkashInfo(false)" style="margin-right: 8px;"> 
+                <div class="bg-blue-50/80 p-2.5 sm:p-3 rounded-lg sm:rounded-xl border border-blue-100">
+                    <p class="text-[10px] sm:text-xs font-bold text-blue-950 mb-1.5">পেমেন্ট মেথড:</p>
+                    <label class="flex items-start text-[10px] sm:text-xs font-semibold text-gray-700 mb-2 cursor-pointer leading-tight">
+                        <input type="radio" name="payOption" value="cod" checked class="mr-2 mt-0.5 accent-blue-600" onchange="toggleBkashInfo(false)"> 
                         <span>ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে টাকা দিন)</span>
                     </label>
-                    <label class="flex items-start text-[11px] sm:text-xs font-semibold text-gray-700 cursor-pointer leading-tight" style="display: flex; align-items: center; font-size: 11px;">
-                        <input type="radio" name="payOption" value="bkash" class="mr-2 mt-0.5 accent-blue-600" onchange="toggleBkashInfo(true)" style="margin-right: 8px;"> 
-                        <span>ইনস্ট্যান্ট বিকাশ পেমেন্ট (বিকাশ করে কনফার্ম করুন)</span>
+                    <label class="flex items-start text-[10px] sm:text-xs font-semibold text-gray-700 cursor-pointer leading-tight">
+                        <input type="radio" name="payOption" value="bkash" class="mr-2 mt-0.5 accent-blue-600" onchange="toggleBkashInfo(true)"> 
+                        <span>বিকাশ পেমেন্ট (বিকাশ করে কনফার্ম করুন)</span>
                     </label>
                 </div>
                 
-                <div id="bkashInfo" class="hidden bg-pink-50 p-2.5 rounded-lg border border-pink-200 text-[11px] sm:text-xs text-gray-700 space-y-1" style="display: none; background: #fdf2f8; padding: 10px; border-radius: 8px; border: 1px solid #fbcfe8; font-size: 11px; margin-bottom: 12px;">
-                    <p class="font-bold text-pink-700" style="margin: 0; font-weight: bold; color: #be185d;">বিকাশ পেমেন্ট নিয়মাবলী:</p>
-                    <p class="leading-relaxed" style="margin: 4px 0 0 0;">দয়া করে <b>01718242092</b> নম্বরে বিকাশ করুন। পেমেন্ট সম্পন্ন হলে আপনার ঠিকানায় সরাসরি প্রোডাক্ট পাঠিয়ে দেওয়া হবে।</p>
+                <div id="bkashInfo" class="hidden bg-pink-50 p-2.5 rounded-lg border border-pink-200 text-[10px] sm:text-xs text-gray-700 space-y-1">
+                    <p class="font-bold text-pink-700">বিকাশ পেমেন্ট নিয়মাবলী:</p>
+                    <p class="leading-relaxed">দয়া করে <b>01718242092</b> নম্বরে বিকাশ করুন। পেমেন্ট সম্পন্ন হলে প্রোডাক্ট পাঠিয়ে দেওয়া হবে।</p>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 sm:py-3 rounded-xl shadow-md mt-2 uppercase tracking-wide" style="width: 100%; background: #2563eb; color: #fff; padding: 10px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">অর্ডার কনফার্ম করুন</button>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 sm:py-3 rounded-xl transition-colors text-xs sm:text-sm shadow-md mt-1 uppercase tracking-wide">অর্ডার কনফার্ম করুন</button>
             </form>
         </div>
     </div>
@@ -287,29 +262,27 @@
             
             if (items.length === 0) {
                 notFound.classList.remove('hidden');
-                notFound.style.display = 'block';
                 products.forEach(p => grid.innerHTML += createCardHTML(p));
             } else {
                 notFound.classList.add('hidden');
-                notFound.style.display = 'none';
                 items.forEach(p => grid.innerHTML += createCardHTML(p));
             }
         }
 
-        // Inline CSS formatting guarantees dual-column support directly inside the generated card
+        // Optimized for small screens with 2-column layout
         function createCardHTML(p) {
             return `
-                <div class="product-card bg-white overflow-hidden shadow-xs border border-gray-100 flex flex-col h-full" style="background: #fff; border: 1px solid #f3f4f6; border-radius: 12px; display: flex; flex-direction: column; height: 100%;">
-                    <div class="relative overflow-hidden bg-gray-50" style="position: relative; height: 140px; background: #f9fafb;">
-                        <img src="${p.img}" class="w-full h-full object-cover object-center" alt="${p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span class="absolute top-2 left-2 bg-blue-600 text-white font-bold" style="position: absolute; top: 8px; left: 8px; background: #2563eb; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 50px;">${p.cat}</span>
+                <div class="product-card bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xs border border-gray-100 flex flex-col h-full">
+                    <div class="relative overflow-hidden bg-gray-50 h-28 sm:h-48">
+                        <img src="${p.img}" class="w-full h-full object-cover object-center" alt="${p.name}" loading="lazy">
+                        <span class="absolute top-1.5 left-1.5 bg-blue-600 text-white font-bold text-[8px] sm:text-[11px] px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-xs">${p.cat}</span>
                     </div>
-                    <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow" style="padding: 12px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                    <div class="p-2 sm:p-5 flex flex-col justify-between flex-grow">
                         <div>
-                            <h3 class="font-bold text-gray-800" style="font-size: 13px; margin: 0 0 4px 0; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${p.name}</h3>
-                            <p class="text-blue-600 font-extrabold" style="font-size: 14px; color: #2563eb; margin: 0 0 10px 0; font-weight: bold;">৳ ${p.price}</p>
+                            <h3 class="font-bold text-gray-800 text-[10px] sm:text-lg mb-0.5 sm:mb-1.5 leading-snug line-clamp-2">${p.name}</h3>
+                            <p class="text-[11px] sm:text-xl text-blue-600 font-extrabold mb-1.5 sm:mb-3">৳ ${p.price}</p>
                         </div>
-                        <button onclick="openModal('${p.name}', '${p.price}')" style="width: 100%; background: #eff6ff; color: #1d4ed8; border: none; padding: 6px 0; border-radius: 6px; font-weight: bold; font-size: 11px; cursor: pointer; text-transform: uppercase;">অর্ডার করুন</button>
+                        <button onclick="openModal('${p.name}', '${p.price}')" class="w-full bg-blue-50 text-blue-700 font-bold py-1 sm:py-2.5 rounded-md sm:rounded-xl hover:bg-blue-600 hover:text-white transition-colors text-[9px] sm:text-xs tracking-wider uppercase">অর্ডার</button>
                     </div>
                 </div>
             `;
@@ -326,30 +299,22 @@
 
         function toggleBkashInfo(show) {
             const infoDiv = document.getElementById('bkashInfo');
-            if(show) {
-                infoDiv.classList.remove('hidden');
-                infoDiv.style.display = 'block';
-            } else {
-                infoDiv.classList.add('hidden');
-                infoDiv.style.display = 'none';
-            }
+            show ? infoDiv.classList.remove('hidden') : infoDiv.classList.add('hidden');
         }
 
         const modal = document.getElementById('orderModal');
         function openModal(name, price) {
             document.getElementById('modalItem').innerText = name + " | ৳ " + price;
             modal.classList.remove('hidden');
-            modal.style.display = 'flex';
         }
 
         function closeModal() {
             modal.classList.add('hidden');
-            modal.style.display = 'none';
         }
 
         document.getElementById('orderForm').onsubmit = function(e) {
             e.preventDefault();
-            alert("ধন্যবাদ! আপনার অর্ডারটি সফলভাবে সাবমিট হয়েছে। ডেলিভারি ও কনফার্মেশনের জন্য খুব শীঘ্রই 01718242092 নম্বর থেকে আপনার সাথে যোগাযোগ করা হবে।");
+            alert("ধন্যবাদ! অর্ডার সফল হয়েছে। কনফার্মেশনের জন্য শীঘ্রই 01718242092 থেকে যোগাযোগ করা হবে।");
             closeModal();
             this.reset();
             toggleBkashInfo(false);
