@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সাহা ইলেকট্রনিক্স | অনলাইন শপ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
+        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px -10px rgba(29, 78, 216, 0.15); }
+        .search-container { position: relative; width: 100%; max-width: 600px; }
+        .object-cover-custom { object-fit: cover; object-position: center; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div class="bg-blue-950 text-white text-xs py-2.5 px-4 sm:px-6 flex flex-wrap justify-between items-center shadow-sm">
+        <div class="flex items-center gap-2">
+            <span>📍 জামাল সুপার মার্কেট, জিরো পয়েন্ট, রাজশাহী</span>
+            <span class="hidden sm:inline">|</span>
+            <span>📞 01718242092</span>
+        </div>
+        <div class="hidden md:block font-medium text-blue-200">
+            দোকান: সকাল ৯টা - রাত ৯টা (শুক্রবার বন্ধ) | অনলাইন শপ: ২৪ ঘণ্টা খোলা
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3.5">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3 w-full lg:w-auto justify-between lg:justify-start">
+                    <div class="flex items-center gap-3">
+                        <img src="https://lh3.googleusercontent.com/d/1ryK7FY8CU3xJyggH-ma8mlOK3_I-OP8v" 
+                             alt="Saha Electronics Logo" 
+                             class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-blue-600 object-cover shadow-sm"
+                             onerror="this.src='https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=150';">
+                        <div>
+                            <h1 class="text-xl sm:text-2xl font-bold text-blue-800 tracking-tight leading-none">সাহা ইলেকট্রনিক্স</h1>
+                            <p class="text-xs sm:text-sm font-semibold text-gray-500 mt-0.5">Owner: দুলাল সাহা</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-container flex-grow max-w-xl">
+                    <input type="text" id="searchInput" oninput="searchProducts()" placeholder="টিভি, ফ্রিজ বা যেকোনো মডেলের নাম লিখে সার্চ করুন..." class="w-full border-2 border-blue-100 rounded-full py-2.5 px-6 pr-12 text-sm sm:text-base focus:outline-none focus:border-blue-600 shadow-inner font-medium text-gray-700 transition-colors">
+                    <button class="absolute right-4 top-2.5 text-blue-600 font-bold text-lg pointer-events-none">🔍</button>
+                </div>
+
+                <nav class="hidden sm:flex gap-6 font-bold text-gray-600 text-sm sm:text-base">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">হোম</a>
+                    <a href="#products" class="hover:text-blue-600 transition-colors">পণ্যসমূহ</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">আমাদের সম্পর্কে</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white py-12 sm:py-16 px-4 sm:px-6">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 max-w-6xl">
+            <div class="lg:w-2/3 text-center lg:text-left">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6 leading-tight">সেরা মানের ইলেকট্রনিক্স পণ্য এখন অনলাইনে!</h2>
+                <p class="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                    রাজশাহীর জিরো পয়েন্টের বিশ্বস্ত প্রতিষ্ঠান সাহা ইলেকট্রনিক্স দিচ্ছে টিভি, ফ্রিজ ও ফ্যানের বিশাল সমাহার। আসল পণ্য ও সঠিক ওয়ারেন্টির নিশ্চয়তা। ঘরে বসেই নিশ্চিন্তে অর্ডার করুন, পান দ্রুত ডেলিভারি।
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <span class="bg-yellow-400 text-blue-950 px-5 py-3 rounded-xl font-bold shadow-md flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider">
+                        🚚 ক্যাশ অন ডেলিভারি
+                    </span>
+                    <span class="bg-white text-blue-950 px-5 py-3 rounded-xl font-bold shadow-md flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider">
+                        💳 বিকাশ ইনস্ট্যান্ট পেমেন্ট
+                    </span>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/3 flex justify-center">
+                <div class="bg-white p-6 rounded-3xl shadow-2xl text-center border-4 border-blue-400/30 max-w-xs w-full transform hover:scale-105 transition-transform duration-300">
+                    <div class="relative w-36 h-36 mx-auto mb-4">
+                        <img src="https://lh3.googleusercontent.com/d/1ryK7FY8CU3xJyggH-ma8mlOK3_I-OP8v" 
+                             alt="Owner Dulal Saha" 
+                             class="w-36 h-36 rounded-full border-4 border-blue-600 object-cover shadow-md object-cover-custom"
+                             onerror="this.src='https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=300';">
+                    </div>
+                    <h3 class="text-blue-950 font-bold text-2xl tracking-tight">দুলাল সাহা</h3>
+                    <p class="text-gray-500 font-semibold text-sm mt-0.5">Owner of Shaha Electronics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 max-w-7xl">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b-2 border-blue-100 pb-4 gap-3">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight">আমাদের ইলেকট্রনিক্স পণ্যসমূহ</h2>
+                <p class="text-gray-500 text-sm sm:text-base mt-1">আকর্ষণীয় মূল্যে সেরা মানের ১০০% অরিজিনাল পণ্য</p>
+            </div>
+            <span class="bg-blue-600 text-white font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm shadow-sm">মোট ২০টি পণ্য</span>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+            </div>
+
+        <div id="notFound" class="hidden text-center py-16 bg-blue-50 rounded-2xl border border-blue-100 mt-8 shadow-sm px-4">
+            <p class="text-4xl sm:text-5xl mb-3">🔍</p>
+            <h3 class="text-lg sm:text-xl text-blue-900 font-bold mb-2">দুঃখিত! আপনার খোঁজা নির্দিষ্ট মডেলটি এই মুহূর্তে তালিকায় পাওয়া যাচ্ছে না।</h3>
+            <p class="text-gray-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">তবে আমাদের স্টকে আরও অনেক আকর্ষণীয় পণ্য রয়েছে। নিচে আমাদের উপলব্ধ টিভি, ফ্রিজ ও ফ্যানগুলোর সম্পূর্ণ তালিকা দেওয়া হলো:</p>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white py-16 sm:py-20 border-t border-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-blue-50/60 to-indigo-50/30 p-6 sm:p-10 rounded-3xl border border-blue-100 shadow-sm">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="text-center">
+                        <img src="https://lh3.googleusercontent.com/d/1ryK7FY8CU3xJyggH-ma8mlOK3_I-OP8v" 
+                             alt="Owner Dulal Saha" 
+                             class="w-44 h-44 sm:w-48 sm:h-48 object-cover rounded-2xl shadow-md border-4 border-white mx-auto object-cover-custom"
+                             onerror="this.src='https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400';">
+                        <h4 class="font-bold text-blue-950 text-xl mt-3.5">দুলাল সাহা</h4>
+                        <p class="text-xs font-semibold text-gray-500 mt-0.5">Owner of Shaha Electronics</p>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm tracking-widest uppercase">আমাদের সম্পর্কে</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-1 mb-3">সাহা ইলেকট্রনিক্স - বিশ্বস্ততার প্রতীক</h2>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                        রাজশাহীর জিরো পয়েন্টে অবস্থিত জামাল সুপার মার্কেটে <strong>সাহা ইলেকট্রনিক্স</strong> দীর্ঘ সময় ধরে অত্যন্ত সুনামের সাথে ব্যবসা পরিচালনা করে আসছে। আমরা স্বনামধন্য <strong>যমুনা ইলেকট্রনিক্স</strong>-এর অনুমোদিত ডিলার। আমাদের শোরুমে পাবেন লেটেস্ট প্রযুক্তির স্মার্ট এলইডি টিভি, বিদ্যুৎ সাশ্রয়ী ফ্রিজ, ডিপ ফ্রিজার, আকর্ষণীয় ডিজাইনের সিলিং ফ্যান এবং রিচার্জেবল চার্জার ফ্যান। আপনাদের কেনাকাটা আরও সহজ ও স্বাচ্ছন্দ্যময় করতেই আমাদের এই অনলাইন উদ্যোগ।
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-3.5 rounded-xl shadow-xs border border-gray-100 flex items-center gap-3">
+                            <span class="text-blue-600 text-xl">📞</span>
+                            <div>
+                                <p class="text-[11px] text-gray-400 font-semibold tracking-wider">হটলাইন নম্বর</p>
+                                <p class="font-bold text-gray-800 text-sm">01718242092</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-xl shadow-xs border border-gray-100 flex items-center gap-3">
+                            <span class="text-blue-600 text-xl">✉️</span>
+                            <div>
+                                <p class="text-[11px] text-gray-400 font-semibold tracking-wider">ইমেইল অ্যাড্রেস</p>
+                                <p class="font-bold text-gray-800 text-xs break-all">sahaelectronics@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-white py-12 border-t-4 border-blue-600">
+        <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm leading-relaxed max-w-6xl">
+            <div>
+                <h4 class="text-base sm:text-lg font-bold mb-3 text-yellow-400 tracking-wide">সাহা ইলেকট্রনিক্স</h4>
+                <p class="text-gray-400 text-xs sm:text-sm">রাজশাহীর জিরো পয়েন্টের বিশ্বস্ত ইলেকট্রনিক্স শপ। সঠিক মূল্যে আসল পণ্য ও সার্ভিস দেওয়াই আমাদের মূল লক্ষ্য।</p>
+            </div>
+            <div>
+                <h4 class="text-base sm:text-lg font-bold mb-3 text-yellow-400 tracking-wide">দোকানের সময়সূচী</h4>
+                <p class="text-gray-300 text-xs sm:text-sm mb-1">শোরুম: সকাল ৯:০০ টা থেকে রাত ৯:০০ টা</p>
+                <p class="text-red-400 font-semibold text-xs sm:text-sm mb-1">শুক্রবার শোরুম সম্পূর্ণ বন্ধ</p>
+                <p class="text-green-400 font-semibold text-xs sm:text-sm">অনলাইন শপ: ২৪ ঘণ্টা খোলা</p>
+            </div>
+            <div>
+                <h4 class="text-base sm:text-lg font-bold mb-3 text-yellow-400 tracking-wide">যোগাযোগ ও ঠিকানা</h4>
+                <p class="text-gray-300 text-xs sm:text-sm mb-2">জামাল সুপার মার্কেট, জিরো পয়েন্ট, রাজশাহী</p>
+                <p class="text-gray-300 text-xs sm:text-sm">অর্ডার ও বিকাশ পেমেন্ট: <span class="text-yellow-300 font-bold">01718242092</span></p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500 font-medium tracking-wider">
+            <p>Owner: দুলাল সাহা | Shaha Electronics</p>
+        </div>
+    </footer>
+
+    <div id="orderModal" class="fixed inset-0 bg-black/60 z-50 hidden flex justify-center items-center px-4 transition-opacity duration-200">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative border-t-4 border-blue-600 overflow-hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-3.5 right-4 text-2xl sm:text-3xl font-bold text-gray-400 hover:text-gray-600 leading-none">&times;</button>
+            <h2 class="text-lg sm:text-xl font-bold text-blue-900 mb-1">অর্ডার ফর্ম</h2>
+            <p id="modalItem" class="font-bold text-gray-700 text-xs sm:text-sm mb-4 pb-2.5 border-b border-gray-100"></p>
+            
+            <form id="orderForm" class="space-y-3.5">
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">আপনার সম্পূর্ণ নাম *</label>
+                    <input type="text" placeholder="নাম লিখুন" required class="w-full border border-gray-300 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">মোবাইল নম্বর *</label>
+                    <input type="tel" placeholder="01718242092" required class="w-full border border-gray-300 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">ডেলিভারি ঠিকানা (শুধুমাত্র রাজশাহী জেলা) *</label>
+                    <textarea placeholder="বাড়ি নং, রাস্তা, এলাকা, থানা, রাজশাহী" required rows="2" class="w-full border border-gray-300 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-600 resize-none"></textarea>
+                </div>
+                
+                <div class="bg-blue-50/80 p-3.5 rounded-xl border border-blue-100">
+                    <p class="text-xs font-bold text-blue-950 mb-2">পেমেন্ট মেথড নির্বাচন করুন:</p>
+                    <label class="flex items-center text-xs font-semibold text-gray-700 mb-2 cursor-pointer">
+                        <input type="radio" name="payOption" value="cod" checked class="mr-2 accent-blue-600" onchange="toggleBkashInfo(false)"> 
+                        ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে টাকা দিন)
+                    </label>
+                    <label class="flex items-center text-xs font-semibold text-gray-700 cursor-pointer">
+                        <input type="radio" name="payOption" value="bkash" class="mr-2 accent-blue-600" onchange="toggleBkashInfo(true)"> 
+                        ইনস্ট্যান্ট বিকাশ পেমেন্ট (বিকাশ করে কনফার্ম করুন)
+                    </label>
+                </div>
+                
+                <div id="bkashInfo" class="hidden bg-pink-50 p-3 rounded-lg border border-pink-200 text-xs text-gray-700 space-y-1 transition-all">
+                    <p class="font-bold text-pink-700">বিকাশ পেমেন্ট নিয়মাবলী:</p>
+                    <p class="leading-relaxed">দয়া করে <b>01718242092</b> নম্বরে বিকাশ করুন। পেমেন্ট সম্পন্ন হলে আপনার ঠিকানায় সরাসরি প্রোডাক্ট পাঠিয়ে দেওয়া হবে।</p>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-colors text-xs sm:text-sm shadow-md mt-2 uppercase tracking-wide">অর্ডার কনফার্ম করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 20 items list with absolutely high-speed fast loading static images
+        const products = [
+            {id: 1, name: "Smart LED TV 24 Inch", price: "11,500", cat: "TV", img: "https://images.pexels.com/photos/5721865/pexels-photo-5721865.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 2, name: "HD Smart LED TV 32 Inch", price: "18,900", cat: "TV", img: "https://images.pexels.com/photos/333982/pexels-photo-333982.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 3, name: "FHD Smart LED TV 40 Inch", price: "26,500", cat: "TV", img: "https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 4, name: "Borderless Smart TV 43 Inch", price: "31,000", cat: "TV", img: "https://images.pexels.com/photos/5721865/pexels-photo-5721865.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 5, name: "Android 4K LED TV 50 Inch", price: "45,000", cat: "TV", img: "https://images.pexels.com/photos/333982/pexels-photo-333982.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 6, name: "WebOS Ultra HD 4K TV 55 Inch", price: "55,000", cat: "TV", img: "https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 7, name: "Basic LED TV 32 Inch", price: "14,500", cat: "TV", img: "https://images.pexels.com/photos/5721865/pexels-photo-5721865.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 8, name: "Glass Door Refrigerator 200L", price: "30,500", cat: "Fridge", img: "https://images.pexels.com/photos/5825576/pexels-photo-5825576.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 9, name: "Frost Smart Refrigerator 220L", price: "33,000", cat: "Fridge", img: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 10, name: "Floral Deep Refrigerator 260L", price: "36,500", cat: "Fridge", img: "https://images.pexels.com/photos/5825576/pexels-photo-5825576.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 11, name: "Non-Frost Refrigerator 300L", price: "42,000", cat: "Fridge", img: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 12, name: "Inverter High-Cool Refrigerator 340L", price: "48,500", cat: "Fridge", img: "https://images.pexels.com/photos/5825576/pexels-photo-5825576.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 13, name: "Direct Cool Refrigerator 180L", price: "27,500", cat: "Fridge", img: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 14, name: "Deep Freezer Chest 150L", price: "24,000", cat: "Deep Freezer", img: "https://images.pexels.com/photos/5825576/pexels-photo-5825576.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 15, name: "Extra Capacity Deep Freezer 250L", price: "32,000", cat: "Deep Freezer", img: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 16, name: "Ceiling Fan 56 Inch Ivory Gold", price: "3,100", cat: "Fan", img: "https://images.pexels.com/photos/3671201/pexels-photo-3671201.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 17, name: "Premium Designer Ceiling Fan 56 Inch", price: "3,500", cat: "Fan", img: "https://images.pexels.com/photos/3671201/pexels-photo-3671201.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 18, name: "High Speed Table Fan Compact", price: "2,600", cat: "Fan", img: "https://images.pexels.com/photos/3736317/pexels-photo-3736317.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 19, name: "Adjustable Stand Fan 18 Inch", price: "3,800", cat: "Fan", img: "https://images.pexels.com/photos/3736317/pexels-photo-3736317.jpeg?auto=compress&cs=tinysrgb&w=500"},
+            {id: 20, name: "Rechargeable Charger Fan Long Backup", price: "4,500", cat: "Charger Fan", img: "https://images.pexels.com/photos/3736317/pexels-photo-3736317.jpeg?auto=compress&cs=tinysrgb&w=500"}
+        ];
+
+        // Renders product grid cleanly and directly
+        function displayProducts(items) {
+            const grid = document.getElementById('productGrid');
+            const notFound = document.getElementById('notFound');
+            grid.innerHTML = '';
+            
+            if (items.length === 0) {
+                notFound.classList.remove('hidden');
+                // Automatically display all products below not-found warning
+                products.forEach(p => grid.innerHTML += createCardHTML(p));
+            } else {
+                notFound.classList.add('hidden');
+                items.forEach(p => grid.innerHTML += createCardHTML(p));
+            }
+        }
+
+        // Helper function for efficient rendering
+        function createCardHTML(p) {
+            return `
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-xs border border-gray-100 flex flex-col h-full">
+                    <div class="relative overflow-hidden bg-gray-50 h-48 sm:h-52">
+                        <img src="${p.img}" class="w-full h-full object-cover object-center" alt="${p.name}" loading="lazy">
+                        <span class="absolute top-2.5 left-2.5 bg-blue-600 text-white font-bold text-[11px] px-3 py-1 rounded-full shadow-xs">${p.cat}</span>
+                    </div>
+                    <div class="p-4 sm:p-5 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-base sm:text-lg mb-1.5 leading-snug line-clamp-2">${p.name}</h3>
+                            <p class="text-base sm:text-lg text-blue-600 font-extrabold mb-3 pb-0.5">৳ ${p.price}</p>
+                        </div>
+                        <button onclick="openModal('${p.name}', '${p.price}')" class="w-full bg-blue-50 text-blue-700 font-bold py-2.5 rounded-xl hover:bg-blue-600 hover:text-white transition-colors text-xs tracking-wider uppercase">অর্ডার করুন</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Live Search Handler
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = products.filter(p => 
+                p.name.toLowerCase().includes(query) || 
+                p.cat.toLowerCase().includes(query)
+            );
+            displayProducts(filtered);
+        }
+
+        // Simple Toggle for bKash guidance div
+        function toggleBkashInfo(show) {
+            const infoDiv = document.getElementById('bkashInfo');
+            show ? infoDiv.classList.remove('hidden') : infoDiv.classList.add('hidden');
+        }
+
+        // Modal triggers
+        const modal = document.getElementById('orderModal');
+        function openModal(name, price) {
+            document.getElementById('modalItem').innerText = name + " | মূল্য: ৳ " + price;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Handle order checkout
+        document.getElementById('orderForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert("ধন্যবাদ! আপনার অর্ডারটি সফলভাবে সাবমিট হয়েছে। ডেলিভারি ও কনফার্মেশনের জন্য খুব শীঘ্রই 01718242092 নম্বর থেকে আপনার সাথে যোগাযোগ করা হবে।");
+            closeModal();
+            this.reset();
+            toggleBkashInfo(false);
+        };
+
+        // Render products immediately without delay
+        displayProducts(products);
+    </script>
+</body>
+</html>
